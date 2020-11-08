@@ -177,7 +177,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-08 16:16:15 / 修改时间：16:44:18" itemprop="dateCreated datePublished" datetime="2020-11-08T16:16:15+08:00">2020-11-08</time>
+              <time title="创建时间：2020-11-08 16:16:15 / 修改时间：18:37:16" itemprop="dateCreated datePublished" datetime="2020-11-08T16:16:15+08:00">2020-11-08</time>
             </span>
 
           
@@ -191,10 +191,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="tomcat部署项目的三种方法"><a href="#tomcat部署项目的三种方法" class="headerlink" title="tomcat部署项目的三种方法"></a>tomcat部署项目的三种方法</h2><p>1.将war包打包金webapp下<br>2.修改conf/server.xml文件，在里面配置项目路径和对应的url路径<br>3.在conf/Catalina/localhost/xx.xml配置项目路径和对应的url路径</p>
+          <h1 id="tomcat和servlet是什么"><a href="#tomcat和servlet是什么" class="headerlink" title="tomcat和servlet是什么"></a>tomcat和servlet是什么</h1><p>tomcat和servlet联合起来提供了对服务器的请求和返回<br>tomcat是一个web服务器，其封装了http请求的端口映射、静态资源返回等等。<br>servlet是一个类，其编译成的class可以放在tomcat里的目录里，这样能处理对于请求的逻辑。</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="tomcat部署项目的三种方法"><a href="#tomcat部署项目的三种方法" class="headerlink" title="tomcat部署项目的三种方法"></a>tomcat部署项目的三种方法</h2><p>1.将war包打包金webapp下<br>2.修改conf/server.xml文件，在里面配置项目路径和对应的url路径<br>3.在conf/Catalina/localhost/xx.xml配置项目路径和对应的url路径</p>
 <h2 id="项目里的servlet配置url路径"><a href="#项目里的servlet配置url路径" class="headerlink" title="项目里的servlet配置url路径"></a>项目里的servlet配置url路径</h2><p>1.修改 项目/web/WEB-INF/web.xml文件，在里面配置servlet路径和配置<br>2.在servlet添加注解，配置对应路径</p>
 <h2 id="配置文件详解"><a href="#配置文件详解" class="headerlink" title="配置文件详解"></a>配置文件详解</h2><p>1.tomcat conf/server.xml tomcat端口等配置都在这个路径<br> tomcat conf/Catalina/localhost/xx.xml 可用来配置项目的url路径<br>2.当访问项目url时会自动访问项目里的web目录下的index.jsp（或html）<br>  项目/web/web.xml 用来配置servlet的访问路径（一个项目可以用好几个servlet）或者通过注解配置</p>
 <h1 id="servlet执行原理"><a href="#servlet执行原理" class="headerlink" title="servlet执行原理"></a>servlet执行原理</h1><p>  <img src="servlet%E5%8E%9F%E7%90%86.jpg" alt="avatar"></p>
+<h1 id="jsp原理"><a href="#jsp原理" class="headerlink" title="jsp原理"></a>jsp原理</h1><p>1.就像其他普通的网页一样，您的浏览器发送一个 HTTP 请求给服务器。</p>
+<p>2.Web 服务器识别出这是一个对 JSP 网页的请求，并且将该请求传递给 JSP 引擎。通过使用 URL或者 .jsp 文件来完成。</p>
+<p>3.JSP 引擎从磁盘中载入 JSP 文件，然后将它们转化为 Servlet。这种转化只是简单地将所有模板文本改用 println() 语句，并且将所有的 JSP 元素转化成 Java 代码。</p>
+<p>4.JSP 引擎将 Servlet 编译成可执行类，并且将原始请求传递给 Servlet 引擎。</p>
+<p>5.Web 服务器的某组件将会调用 Servlet 引擎，然后载入并执行 Servlet 类。在执行过程中，Servlet 产生 HTML 格式的输出并将其内嵌于 HTTP response 中上交给 Web 服务器。</p>
+<p>6.Web 服务器以静态 HTML 网页的形式将 HTTP response 返回到您的浏览器中。</p>
+<p>7.最终，Web 浏览器处理 HTTP response 中动态产生的HTML网页，就好像在处理静态网页一样。</p>
 
       
     </div>
